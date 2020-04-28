@@ -1,0 +1,18 @@
+#ignore everything
+*
+
+#unignore files
+!.gitignore
+!*.css
+!*.html
+!*.js
+!*.gif
+!*.png
+!*.ttf
+
+#unignore folders
+!*images/
+!*html/
+!*css/
+!*resources/
+!*js/

@@ -1,0 +1,586 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: Bangers;
+	src: url(../resources/Bangers-Regular.ttf) format('truetype');
+}
+
+/*
+   New Perspectives on HTML and CSS
+   Final Project
+
+   King Gizzard Style Sheet
+  
+   Filename: barkerthomas_styles.css
+
+*/
+
+
+/* HTML and Body styles */
+
+html {
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    color: white;
+	height: 100%;
+}
+
+html#bioBG {
+	background: linear-gradient(to bottom right, red, darkred, black);
+}
+
+html#albumBG {
+	background: linear-gradient(to bottom right, orange, darkorange, black);
+}
+
+html#tourBG {
+	background: linear-gradient(to bottom right, green, darkgreen, black);
+}
+
+html#vidBG {
+	background: linear-gradient(to bottom right, blue, darkblue, black);
+}
+
+html#joinBG {
+	background: linear-gradient(to bottom right, purple, indigo, black);
+}
+
+html#linksBG {
+	background: linear-gradient(to bottom right, blanchedalmond, burlywood, black);
+}
+
+body {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+
+	margin: 0px auto;
+    min-width: 320px;
+    max-width: 2560px;
+    width: 90%;
+	min-height: 100%;
+}
+
+/* Nav Styles */
+    
+nav#links {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+	-webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+	
+	
+    
+    background-color: black;
+    border-bottom: solid white;
+	border-left: solid white;
+	border-right: solid white;
+    border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	margin-left: auto;
+    margin-right: auto;
+    height: 90px;
+	position: fixed;
+	left: 0;
+	right: 0;
+	padding-top: 5px;
+	width: 90%;
+}
+
+nav#links > img#logo {
+    display: block;
+    width: 15%;
+    height: 80%;
+    margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+nav#links > ul {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-content: center;
+    align-items: center;
+    
+    list-style: none;
+    font-family: Bangers;
+    letter-spacing: 0.2em;
+    text-shadow: 4px 4px 8px #000000;
+    width: 75%;
+	overflow: hidden;
+}
+
+nav#links > ul > li {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-align-content: center;
+    align-items: center;
+    
+    position: relative;
+    overflow: hidden;
+    
+    font-size: 2em;
+    flex-basis: 15%;
+    height: 85px;
+    text-align: center;
+    
+    pointer-events: none;
+}
+
+nav#links > ul > li:before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: -1;
+    
+    background: url(../images/nonagon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0%;
+    
+    animation: spin 5s linear infinite;
+    transition: background-size 0.4s;
+    
+    pointer-events: none;
+}
+
+nav#links a {
+    text-decoration: none;
+    color: white;
+    pointer-events: auto;
+}
+
+nav#links li:hover:before {
+    background-size: 45%;
+}
+
+@keyframes spin{
+	from{transform:rotate(0deg)}
+	to{transform:rotate(360deg)}	
+}
+
+/* Main Styles */
+
+#main {
+	display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+	-webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    align-items: center;
+    
+    background-color: black;
+    border: solid;
+    border-color: white;
+    border-radius: 30px;
+    height: 77%;
+	width: 90%;
+	position: fixed;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+    margin-right: auto;
+	margin-top: 115px;
+}
+
+/*Left Styles*/
+
+.left {
+	width: 30%;
+	height: 95%;
+}
+
+.left > div.leftBody {
+	display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+	-webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    align-items: center;
+	
+	width: 100%;
+	height: 100%;
+	box-shadow: 0 0 15px 15px black inset;
+	border-radius: 30px;
+	position: relative;
+}
+
+.left > div#bioBG {
+	background: linear-gradient(darkred 5%, red 95%);
+}
+
+.left > div#albumBG {
+	background: linear-gradient(darkorange 5%, orange 95%);
+}
+
+div.leftBody > ul#albums {
+	display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-justify-content: center;
+    justify-content:center;
+
+	width: 80%;
+	height: auto;
+	max-height: 90%;
+	
+	overflow: auto;
+}
+
+ul#albums > li {
+	display: block;
+	width: 50%;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+ul#albums > li > a > img {
+	display: block;
+	width: 75%;
+}
+
+ul#albums > li > a > img:hover {
+	box-shadow: 0 0 2px 1px black;
+}
+
+
+.left > div#vidBG {
+	background: linear-gradient(darkblue 5%, blue 95%);
+}
+
+.left > div#tourBG {
+	background: linear-gradient(darkgreen 5%, green 95%);
+}
+
+.left > div#joinBG {
+	background: linear-gradient(indigo 5%, purple 95%);
+}
+
+.left > div#linksBG {
+	background: linear-gradient(burlywood 5%, blanchedalmond 95%);
+}
+
+.leftBody > ol {
+	display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+	-webkit-align-content: center;
+    align-content: center;
+	
+	font-family: Bangers;
+	letter-spacing: .2em;
+	line-height: 3em;
+	width: 80%;
+	height: auto;
+	max-height: 90%;
+}
+
+.leftBody > ol > li {
+	display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+	-webkit-align-content: center;
+    align-items: center;
+	list-style-type: none;
+	font-size: 1.2em;
+	margin: 0 auto;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateZ(0) scale(1.0, 1.0);
+	transform: translateZ(0);
+	
+	transition: font-size 0.3s;
+}
+
+.leftBody > ol > li:hover {
+	font-size: 1.5em;
+}
+
+.leftBody > ol > li > a {
+	text-decoration: none;
+	color: white;
+	text-shadow: 2px 1px 4px #000000;
+}
+
+
+
+/*Right Styles*/
+
+.right {
+	width: 68%;
+	height: 95%;
+}
+
+.right > div.rightBody {
+	display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+	-webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    align-items: center;
+	width: 100%;
+	height: 100%;
+	box-shadow: 0 0 15px 15px black inset;
+	border-radius: 30px;
+}
+
+
+.right > div#bioBG {
+	background: url("../images/redband.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.right > div#albumBG {
+	background: url("../images/cyboogie.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.transBack {
+	display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+	-webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    align-items: center;
+	background-color: rgba(0,0,0,0.5);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+}
+
+a.battleMarkers {
+    position: absolute;
+}
+
+a#link1 {
+    top: 220px;
+    left: 340px;
+}
+
+a#link2 {
+    top: 194px;
+    left: 358px;
+}
+
+a#link3 {
+    top: 202px;
+    left: 400px;
+}
+
+a#link4 {
+    top: 217px;
+    left: 452px;
+}
+
+a#link5 {
+    top: 229px;
+    left: 498px;
+}
+
+a#link6 {
+    top: 246px;
+    left: 544px;
+}
+
+a#link7 {
+    top: 220px;
+    left: 340px;
+}
+
+a#link8 {
+    top: 194px;
+    left: 358px;
+}
+
+a#link9 {
+    top: 202px;
+    left: 400px;
+}
+
+a#link10 {
+    top: 217px;
+    left: 452px;
+}
+
+a#link11 {
+    top: 229px;
+    left: 498px;
+}
+
+a#link12 {
+    top: 246px;
+    left: 544px;
+}
+
+a#link13 {
+    top: 220px;
+    left: 340px;
+}
+
+a#link14 {
+    top: 194px;
+    left: 358px;
+}
+
+a#link15 {
+    top: 202px;
+    left: 400px;
+}
+
+a#link16 {
+    top: 217px;
+    left: 452px;
+}
+
+a#link17 {
+    top: 229px;
+    left: 498px;
+}
+
+a#link18 {
+    top: 246px;
+    left: 544px;
+}
+
+.transBack > .beach {
+	display: block;
+	width: 0%;
+	height: auto;
+	border-radius: 30px;
+	position: absolute;
+	background: red;
+	
+}
+
+.beach > img, .beach > p {
+	display: block;
+	width: 45%;
+}
+
+
+
+.barBruise {
+	display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+	-webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-align-content: center;
+    align-items: center;
+	width: 50%;
+	height: auto;
+	border-radius: 30px;
+	position: absolute;
+	visibility: hidden;
+}
+
+.barBruise > img {
+	display: block;
+	width: 45%;
+}
+
+.barBruise > p {
+	display: block;
+	width: 50%;
+}
+
+#link1:target/*, #link2:target, #link3:target, #link4:target, #link5:target, #link6:target, #link7:target, #link8:target,
+#link9:target, #link10:target, #link11:target, #link12:target, #link13:target, #link14:target, #link15:target, #link16:target*/ {
+	visibility: visible;
+}
+
+.right > div#vidBG {
+	background: url("../images/fishies.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.right > div#joinBG {
+	background: url("../images/gizzKexp.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.right > div#tourBG {
+	background: url("../images/gizzColor.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.right > div#linksBG {
+	background: url("../images/gizzGang.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+/*Footer Styles */
+
+body > footer {
+	display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+	-webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    align-items: center;
+    
+    background-color: black;
+    border-top: solid white;
+	border-left: solid white;
+	border-right: solid white;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+    height: 6%;
+	width: 90%;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin-left: auto;
+    margin-right: auto;
+	
+	font-family: Bangers;
+	letter-spacing: 0.2em;
+}
